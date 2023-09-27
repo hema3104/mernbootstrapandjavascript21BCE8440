@@ -1,0 +1,42 @@
+<html>   
+   <head>   
+      <script type = "text/javascript">   
+            var img = null;   
+            var interval = null; // Add this line
+            
+            function init(){    
+               img = document.getElementById('myimg');  
+               img.style.position = 'relative';       
+               img.style.left = '50px';     
+            }       
+            function moveRight() {
+    var currentPosition = parseInt(img.style.left);
+    if (currentPosition < 500) {
+        img.style.left = (currentPosition + 100) + 'px';
+    }
+}
+   
+            
+            function start(){   // Rename the function
+               interval = setInterval(moveRight, 1000); // Move the interval here
+            }
+            function stop(){    
+               clearInterval(interval); // Stop the interval
+            }
+            window.onload = init;    
+      </script>   
+   </head>   
+   <body>   
+      <form>   
+         <img id = "myimg" src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwEGg3ZOQeYWl-jOyhew1bxycVykqGh6uyVQ&usqp=CAU" />   
+         <center>  
+            <p>Click the below button to move the image right</p>   
+            <input type = "button" value = "Start" onclick = "start();" /> <!-- Correct the onclick function -->
+         </center> 
+         <center>  
+            <p>Click the below button to stop the movement</p>   
+            <input type = "button" value = "Stop" onclick = "stop();" /> <!-- Correct the onclick function -->
+         </center>   
+      </form>  
+   </body>  
+</html>

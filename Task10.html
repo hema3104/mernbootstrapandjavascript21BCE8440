@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>(Type a title for your page here)</title>
+<script type="text/javascript"> 
+    function show_date() { 
+    var in_date = new Date();
+    var str=in_date.getDate() +'/'+(in_date.getMonth()+1)+'/'+in_date.getFullYear()
+    document.getElementById('display2').innerHTML=str
+    }
+    </script>
+<script type="text/javascript"> 
+function show_now() { 
+var my_time = new Date();
+document.getElementById('display').innerHTML=my_time
+}
+</script>
+
+</head>
+<body>
+    <input type=button value='Show Date' onclick="show_date();">
+    <div id=display2></div>
+<input type=button value="Show Time" onclick="show_now();">
+<div id=display></div>
+</body>
+
+</html>

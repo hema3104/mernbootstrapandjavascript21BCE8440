@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+
+    <style>
+        body, html {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h3 class="text-center">Form in Bootstrap</h3>
+        <form id="bs-validate-demo" novalidate>
+
+            <div class="form-group">
+                <label for="NameDemo1">Name</label>
+                <input type="text" class="form-control col-md-12" id="NameDemo1" aria-describedby="nameHelp" placeholder="Enter the Name" required>
+                <div class="invalid-feedback">
+                    name is required
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="EmailDemo">Your Email</label>
+                <input type="email" class="form-control col-md-12" id="EmailDemo" placeholder="Enter email" required>
+                <div class="invalid-feedback">
+                    email address is required
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="passDemo">Enter Password</label>
+                <input type="password" class="form-control col-md-12" id="passDemo" aria-describedby="passHelp" placeholder="Password" required>
+                <div class="invalid-feedback">
+                    password is required
+                </div>
+            </div>
+
+            <div class="form-group col-md-12">
+              <label for="selectDemo">Hobbies</label>
+              <select class="custom-select custom-select-lg mb-7">
+                <option selected>Hobbies</option>
+                <option value="1">cooking</option>
+                <option value="2">dancing</option>
+                <option value="3">Other</option>
+              </select>
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-danger">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        (function () {
+            'use strict';
+
+            window.addEventListener('load', function () {
+                var form = document.getElementById('bs-validate-demo');
+                form.addEventListener('submit', function (event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            }, false);
+        })();
+    </script>
+</body>
+
+</html>
